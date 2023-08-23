@@ -1,0 +1,120 @@
+---
+title: "EDS221_Day7_Joins_Activities"
+author: "OP"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+libreary(here)
+```
+
+
+## Create some data, check the classes, index!
+### Vectors, lists & data frames
+
+#### In your Quarto document:
+
+1. Create a vector called vec_1 containing the following:
+2, 5, 9, 10, 8, 12, 1, 0
+```{r}
+vec_1 <- c(2, 5, 9, 10, 8, 12, 1, 0)
+vec_1
+```
+
+
+2. Check the following for that vector:
+
+2.1 What is the class of the vector? class()
+```{r}
+class(vec_1)
+```
+
+2.2 What type of variable does it store? typeof()
+```{r}
+typeof(vec_1)
+```
+
+2.3 Access the 3rd element and store as vec_1_e3
+```{r}
+vec_1_e3 <- vec_1[3]
+vec_1_e3
+```
+
+
+2.4 Access the 1st element and store as vec_1_e1
+```{r}
+vec_1_e1 <- vec_1[1]
+vec_1_e1
+```
+
+2.5 Access the 5th through 7th elements and store as vec_1_e5to7
+```{r}
+vec_1_e5to7 <- vec_1[5 : 7]
+vec_1_e5to7
+```
+
+2.6. Reassign vec_1 as a character using as.character, stored as vec_1_char. What does the output look like?
+```{r}
+vec_1_char <- as.character(vec_1)
+vec_1_char
+```
+
+
+2.7. Create a vector called vec_2
+vec_2 should contained named elements, where town = "Santa Barbara, location = "Rincon", swell = "south"
+```{r}
+vec_2 <- c(town = "Santa Barbara", location = "Rincon", swell = "south")
+vec_2
+```
+
+2.8 What is the class of vector elements? class()
+```{r}
+class(vec_2)
+```
+
+
+2.9 What is the length of vec_2?
+```{r}
+length(vec_2)
+```
+
+2.10 Access the 2nd element by name and store as vec_2_e2
+```{r}
+vec_2_e2 <- vec_2[[2]]
+vec_2_e2
+```
+
+3. Create a data frame in R, index
+Write code to create a data frame called df_1 that looks like this:
+   region     species count
+ 1      A       otter    12
+ 2      B great white     2
+ 3      A    sea lion    36
+ 4      D  gray whale     6
+
+```{r}
+df_1 <- data.frame(region = c("A", "B", "A", "D"), species = c("otter", "great white", "sea lion", "gray whale"), count = c(12, 2, 36, 6))
+df_1
+```
+
+3.1 Return the class of the entire data frame
+```{r}
+class(df_1)
+```
+
+3.2 Return the class of the species column
+```{r}
+class(df_1$species)
+```
+
+3.3 Find the maximum value of the count() column, store as max_count
+```{r}
+
+max_count <- max(df_1$count)
+max_count
+```
+
+
